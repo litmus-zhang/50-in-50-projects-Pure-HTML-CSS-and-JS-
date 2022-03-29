@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: black;
+  --secondary-color: white;
+}
+
+html.dark {
+  --primary-color: white;
+  --secondary-color: black;
+}
+html {
+  transition: all 0.5s ease-in;
+}
+html.dark {
+  background-color: #111;
+  color: var(--primary-color);
+}
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.toggle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 12px;
+  position: absolute;
+  cursor: pointer;
+  top: 100px;
+}
+
+.toggle:focus {
+  outline: none;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  /* background-color: #f0f0f0; */
+  /* border-radius: 50%; */
+}
+
+.needle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 56px;
+  width: 2px;
+  background-color: var(--primary-color);
+  transform-origin: bottom center;
+  transition: all 0.5s ease-in;
+}
+
+.needle.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.minute {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+}
+.needle.second {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+  background-color: #e7473c;
+}
+
+.center-point {
+  position: absolute;
+  align-items: center;
+  background-color: #111;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  border: 3px solid #e7473c;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.time {
+  font-size: 3rem;
+}
+
+.date {
+  color: #aaa;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.date .circle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  padding: 4px 8px;
+  line-height: 18px;
+  transition: all 0.5s ease-in;
+}

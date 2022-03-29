@@ -1,0 +1,26 @@
+//Get the classes
+const loadText = document.querySelector(".loading-text");
+const bg = document.querySelector(".bg");
+
+let load = 0
+
+//Run blurring function at 30ms interval
+let int = setInterval(blurring, 30)
+
+
+//Declare the blurring function
+function blurring() {
+    load++
+    if (load > 99) {
+        clearInterval(int)
+    }
+    loadText.innerText = `${load}%`
+    loadText.style.opacity = scale(load, 0, 100, 1, 0)
+    bg.style.filter  =`blur(${scale(load, 0,100, 20,0 )}px)`
+}
+
+//scaling function for mapping the difference of three numbers 
+
+const scale = (num, in_min, in_max, out_min, out_max) => {
+    return((num -in_min)*(out_max-out_min))/(in_max-in_min) + out_min
+}

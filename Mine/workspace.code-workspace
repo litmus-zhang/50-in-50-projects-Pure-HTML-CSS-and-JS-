@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "Mine",
+			"path": "."
+		},
+		{
+			"name": "images",
+			"path": "..\\Image Carousel\\images"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Mine",
+		"liveServer.settings.port": 5501
+	}
+}
